@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>68454ffb-51fa-4bfa-aabe-54eff1b90bfd</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkIdentifier>Deployment</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>1.0</TargetFrameworkVersion>
+    <PrepareForBuildDependsOn>
+    </PrepareForBuildDependsOn>
+  </PropertyGroup>
+  <Import Condition=" Exists('Deployment.targets') " Project="Deployment.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <!-- vertag<:>start tokens<:>maj.min -->
+  <Import Condition=" Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets') " Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets" />
+  <!-- vertag<:>end -->
+  <ItemGroup>
+    <Content Include="APIMDeploy.parameters.perf.json" />
+    <Content Include="APIMDeploy.parameters.int.json" />
+    <Content Include="APIMDeploy.parameters.test.json" />
+    <Content Include="APIMDeploy.parameters.uat.json" />
+    <Content Include="APIMDeploy.parameters.prod.json" />
+    <Content Include="APIMDeploy.json" />
+    <Content Include="APIMDeploy.parameters.dev.json" />
+    <None Include="Deployment Scripts\APIMBasePolicies.wadl.xml" />
+    <None Include="Deployment Scripts\APIMPolicyConfig.perf.json" />
+    <None Include="Deployment Scripts\APIMPolicyConfig.dev.json" />
+    <None Include="Deployment Scripts\APIMPolicyConfig.int.json" />
+    <None Include="Deployment Scripts\APIMPolicyConfig.prod.json" />
+    <None Include="Deployment Scripts\APIMPolicyConfig.test.json" />
+    <None Include="Deployment Scripts\APIMPolicyConfig.uat.json" />
+    <None Include="Deployment Scripts\AzureFunctionConfig.ps1" />
+    <None Include="Deployment Scripts\BasePolicies.wadl.xml" />
+    <None Include="Deployment Scripts\CreateADPAPI.ps1" />
+    <None Include="Deployment Scripts\CreateHybrisSevaAPI.ps1" />
+    <None Include="Deployment Scripts\CreateCRMAPI.ps1" />
+    <None Include="Deployment Scripts\CreateWorkItem.ps1" />
+    <None Include="Deployment Scripts\DeploymentConfiguration\DeploymentConfig.prod.json" />
+    <None Include="Deployment Scripts\DeploymentConfiguration\DeploymentConfig.uat.json" />
+    <None Include="Deployment Scripts\DeploymentConfiguration\DeploymentConfig.perf.json" />
+    <None Include="Deployment Scripts\DeploymentConfiguration\DeploymentConfig.int.json" />
+    <None Include="Deployment Scripts\DeploymentConfiguration\DeploymentConfig.test.json" />
+    <None Include="Deployment Scripts\DeploymentConfiguration\DeploymentConfig.dev.json" />
+    <None Include="Deployment Scripts\deploymentScript.ps1" />
+    <None Include="Deployment Scripts\GetAzureConfigurations.ps1" />
+    <None Include="Deployment Scripts\libs\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
+    <None Include="Deployment Scripts\libs\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll" />
+    <None Include="Deployment Scripts\libs\Microsoft.IdentityModel.Clients.ActiveDirectory.xml" />
+    <None Include="Deployment Scripts\SetAPIMPolicy.ps1" />
+    <None Include="Deployment Scripts\UpdatePolicies.ps1" />
+    <None Include="Deployment.targets">
+      <Visible>False</Visible>
+    </None>
+    <Content Include="Deploy-AzureResourceGroup.ps1" />
+  </ItemGroup>
+  <Target Name="GetReferenceAssemblyPaths" />
+</Project>

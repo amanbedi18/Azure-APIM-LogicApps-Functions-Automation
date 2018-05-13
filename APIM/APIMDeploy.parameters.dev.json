@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "service_apim_name": {
+      "value": ""
+    },
+    "apim_location": {
+      "value": ""
+    },
+    "publisher_email": {
+      "value": ""
+    },
+    "publisher_name": {
+      "value": ""
+    },
+    "sku_name": {
+      "value": "Developer"
+    },
+    "vntResourceGroup": {
+      "value": ""
+    },
+    "vntName": {
+      "value": ""
+    },
+    "subnetName": {
+      "value": ""
+    },
+    "omsName": {
+      "value": ""
+    },
+    "omsLocation": {
+      "value": ""
+    },
+    "omsTier": {
+      "value": "Free"
+    },
+    "notificationHubNamespaceName": {
+      "value": ""
+    },
+    "notificationHubName": {
+      "value": ""
+    },
+    "notificationHubSkuName": {
+      "value": "free"
+    },
+    "storageAccountName": {
+      "value": ""
+    },
+    "functionapp_name": {
+      "value": ""
+    },
+    "service_plan_name": {
+      "value": ""
+    }
+  }
+}

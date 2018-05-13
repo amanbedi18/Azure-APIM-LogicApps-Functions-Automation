@@ -1,0 +1,48 @@
+<!--    IMPORTANT:
+    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.
+    - Only the <forward-request> policy element can appear within the <backend> section element.
+    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.
+    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.
+    - To add a policy position the cursor at the desired insertion point and click on the round button associated with the policy.
+    - To remove a policy, delete the corresponding policy statement from the policy document.
+    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.
+    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.
+    - Policies are applied in the order of their appearance, from the top down.-->
+<policies>
+  <inbound>
+    <base />
+    <cors>
+      <allowed-origins>
+        <origin>https://sampleurl.com</origin>
+      </allowed-origins>
+      <allowed-methods>
+        <method>*</method>
+      </allowed-methods>
+      <allowed-headers>
+        <header>*</header>
+      </allowed-headers>
+    </cors>
+    <cache-lookup vary-by-developer-groups="false" vary-by-developer="false">
+      <vary-by-query-parameter>SampleID</vary-by-query-parameter>
+      <vary-by-query-parameter>AnotherID</vary-by-query-parameter>
+      <vary-by-header>Accept</vary-by-header>
+      <vary-by-header>Accept-Charset</vary-by-header>
+    </cache-lookup>
+    <rewrite-uri id="apim-generated-policy" template="/SampleID/{SampleID}?api-version=2016-06-01&amp;sp=/triggers/manual/run&amp;{{sample-logicapp-sig}}" />
+    <set-backend-service id="apim-generated-policy" base-url="https://prod-111.southeastasia.logic.azure.com/workflows/303d1088b7974266a00606d521ca01f6/triggers/manual/paths/invoke" />
+    <set-header name="Ocp-Apim-Subscription-Key" exists-action="delete" />
+  </inbound>
+  <backend>
+    <base />
+    <!--{
+    "azureResource":  {
+                          "type":  "logicapp",
+                          "id":  "/subscriptions/{subscription ID}/resourceGroups/{RG name}/providers/Microsoft.Logic/workflows/{Logic App Name}/triggers/manual"
+                      }
+}-->
+  </backend>
+  <outbound>
+    <base />
+    <cache-store duration="3600" />
+  </outbound>
+</policies>

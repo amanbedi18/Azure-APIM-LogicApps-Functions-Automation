@@ -1,0 +1,17 @@
+<policies>
+  <inbound>
+    <base />
+    <rate-limit calls="10000" renewal-period="90">
+      <api name="ADPCrmAPI" calls="10000">
+        <operation name="Get PII Data" calls="10000" />
+        <operation name="Get Transaction History" calls="10000" />
+      </api>
+    </rate-limit>
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <base />
+  </outbound>
+</policies>

@@ -1,0 +1,23 @@
+﻿{
+  "ratelimit": {
+    "calls": 10000,
+    "renewalperiod": 90,
+    "api": {
+      "calls": 10000,
+      "operations": [
+        {
+          "Name": "Notification",
+          "Call": 10000
+        },
+        {
+          "Name": "Get PII Data",
+          "Call": 10000
+        },
+        {
+          "Name": "Get Transaction History",
+          "Call": 10000
+        }
+      ]
+    }
+  }
+}

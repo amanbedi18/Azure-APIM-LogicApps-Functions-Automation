@@ -1,0 +1,13 @@
+﻿{
+  "DeploymentParameters": {
+    "ResourceGroupName": "{Resource group name containing the APIM service and the existing logic app}",
+    "APIMServiceName": "{APIM Service name}",
+    "CRMAPIName": "{API Name}",
+    "CRMAPIPath": "{API relative path}",
+    "CRMProductTitle": "{name of the product}",
+    "GetTransactionsHistoryLogicAppName": "{name of an existing logic app}",
+    "OriginUrls": [ "{valid url}", "{valid url}" ],
+    "GetPiiDataBackend": "{valid url}",
+    "CRMProductAdminEmail": "{Valid email address}"
+  }
+}
